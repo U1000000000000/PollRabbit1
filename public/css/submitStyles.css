@@ -1,0 +1,133 @@
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensures it stays above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffe4cc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topbar .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #884a39;
+}
+
+.topbar .submit-button {
+  padding: 0.5rem 1rem;
+  background-color: #f4b183;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.topbar .back-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #884a39;
+  cursor: pointer;
+}
+
+/* Form container */
+.form-container {
+  max-width: 800px;
+  margin-top: 7rem;
+  margin-bottom: 10rem;
+  margin-left: 320px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.poll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: bold;
+  color: #884a39;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 1px solid #f4b183;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 4rem;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #b0b0b0;
+}
+
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #f4b183;
+  border-radius: 8px;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.upload-placeholder {
+  text-align: center;
+  color: #884a39;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-option-button {
+  background: none;
+  border: none;
+  color: #884a39;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-submit-button {
+  padding: 1rem;
+  background-color: #f4b183;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-submit-button:hover {
+  background-color: #e3946e;
+}

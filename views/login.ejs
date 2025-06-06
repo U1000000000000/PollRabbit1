@@ -1,0 +1,211 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="/css/register-styles.css">
+
+
+<div class="center-wrapper">
+
+  <div class="SVG">
+
+    <svg class="speech-bubble" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.5 75.5V309.5L46 333L163 343L123.5 424.5L283.5 343L546 340L600 294V94L559 49L59.5 43.5L21.5 75.5Z" fill="#D9D9D9" stroke="black" />
+      <path
+        d="M521.041 33.3328H88.9587C39.9038 33.3328 0 62.5687 0 98.5073V284.719C0 320.659 39.9038 349.894 88.9587 349.894H146.451L102.582 430.226C100.499 434.062 102.1 438.456 106.547 441.007C108.86 442.33 111.631 443 114.401 443C116.994 443 119.586 442.423 121.746 441.268L296.359 349.894H521.042C570.096 349.894 610 320.659 610 284.719V98.5073C610 62.5687 570.096 33.3328 521.041 33.3328ZM584.609 284.738C584.609 310.398 556.091 331.291 521.067 331.291H292.317C289.674 331.291 287.056 331.887 284.921 333.023L142.309 407.657L177.027 344.046C178.604 341.179 178.12 337.92 175.756 335.369C173.393 332.818 169.453 331.273 165.234 331.273H88.9838C53.96 331.273 25.4425 310.38 25.4425 284.72V98.5073C25.4425 72.8476 53.96 51.9546 88.9838 51.9546V51.9729H521.067C556.091 51.9729 584.609 72.8659 584.609 98.5257V284.738Z"
+        fill="#FFA500" />
+      <foreignObject x="30" y="50" width="500" height="200">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
+          <text id="bubble-text" font-family="Arial, sans-serif" font-size="40" fill="black"></text>
+        </div>
+      </foreignObject>
+    </svg>
+
+    <div class="bunny-bubble">
+      <div class="bunny-circle">
+
+        <svg class="bunny" id="bunnySVG" height="160" width="160" viewBox="0 0 1001 727" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M407.48 211.931C439.732 267.792 460.294 322.714 467.761 366.056C471.504 387.778 471.835 405.904 469.174 419.522C466.506 433.177 461.206 440.72 455.028 444.287C448.85 447.854 439.668 448.672 426.508 444.155C413.384 439.651 397.853 430.301 380.912 416.198C347.11 388.061 309.828 342.792 277.576 286.931C245.325 231.07 224.762 176.148 217.295 132.806C213.553 111.084 213.221 92.9578 215.882 79.3403C218.551 65.6851 223.85 58.1422 230.028 54.5753C236.206 51.0084 245.388 50.1904 258.548 54.707C271.672 59.2112 287.204 68.5613 304.145 82.6637C337.946 110.801 375.229 156.07 407.48 211.931Z"
+            fill="#FFC1C2" stroke="#D9D9D9" stroke-width="25" />
+          <path
+            d="M717.48 291.931C685.229 347.792 647.946 393.061 614.145 421.198C597.204 435.301 581.672 444.651 568.548 449.155C555.388 453.672 546.206 452.854 540.028 449.287C533.85 445.72 528.551 438.177 525.882 424.522C523.221 410.904 523.553 392.778 527.295 371.056C534.762 327.714 555.325 272.792 587.576 216.931C619.828 161.07 657.11 115.801 690.912 87.6637C707.853 73.5613 723.384 64.2112 736.508 59.707C749.668 55.1904 758.85 56.0084 765.028 59.5753C771.206 63.1422 776.506 70.6851 779.174 84.3403C781.835 97.9578 781.504 116.084 777.761 137.806C770.294 181.148 749.732 236.07 717.48 291.931Z"
+            fill="#FFC1C2" stroke="#D9D9D9" stroke-width="25" />
+          <path d="M721.622 527C721.622 637.127 621.167 726.5 497.122 726.5C373.077 726.5 272.622 637.127 272.622 527C272.622 416.873 373.077 327.5 497.122 327.5C621.167 327.5 721.622 416.873 721.622 527Z" fill="#D9D9D9" stroke="#B5B5B5" />
+          <ellipse id="leftEye" cx="384.622" cy="459" rx="37.5" ry="40" transform="rotate(-10 384.622 459)" fill="black" />
+          <ellipse id="rightEye" cx="598.622" cy="459" rx="37.5" ry="40" transform="rotate(10 598.622 459)" fill="black" />
+          <ellipse id="mouth" cx="497.122" cy="552" rx="40" ry="25" fill="black" />
+          <rect x="492.122" y="552" width="10" height="50" fill="black" />
+          <path d="M447.165 602C445.641 624.926 485.381 644.354 497.122 602" stroke="black" stroke-width="10" />
+          <path d="M497.165 602C495.641 624.926 535.381 644.354 547.122 602" stroke="black" stroke-width="10" />
+          <circle id="leftPupil" cx="385.001" cy="459" r="15" fill="white" />
+          <circle id="rightPupil" cx="599.001" cy="459" r="15" fill="white" />
+          <ellipse id="leftLobe" cx="179.474" cy="274.125" rx="100" ry="250" transform="rotate(20 179.474 274.125)" fill="#C5C5C5" />
+          <ellipse id="rightLobe" cx="821.475" cy="283.125" rx="100" ry="250" transform="rotate(-20 821.475 283.125)" fill="#C5C5C5" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="notSVG">
+    <form action="/login" method="POST" id="loginForm">
+      <div class="google-btn-div">
+        <a href="/auth/google" class="google-btn">
+          <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+          </svg>
+          Continue with Google
+        </a>
+      </div>
+
+      <div class="separator">
+        <hr class="line">
+        <span class="or-text">or</span>
+        <hr class="line">
+      </div>
+
+      <div>
+        <div>
+          <label for="email" class="form-label">Email or username:</label>
+          <input id="loginInfo" name="loginInfo" class="form-control" aria-describedby="emailHelp"required>
+          <input type="hidden" id="knowMore" name="determineLI">
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" class="form-control" required>
+        </div>
+        <button type="submit" onclick="loadScript()" class="nextStep">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script>
+
+  const leftLobe = document.getElementById('leftLobe');
+  const rightLobe = document.getElementById('rightLobe');
+  const bunny = document.getElementById('bunnySVG');
+
+  function animateLobes(action) {
+
+    if (action === 'close') {
+      leftLobe.setAttribute('cx', 310);
+      leftLobe.setAttribute('cy', 269.125);
+      leftLobe.setAttribute('transform', 'rotate(-20 310 269.125)');
+
+      rightLobe.setAttribute('cx', 678);
+      rightLobe.setAttribute('cy', 274.125);
+      rightLobe.setAttribute('transform', 'rotate(20 678 274.125)');
+    } else {
+      leftLobe.setAttribute('cx', 179.474);
+      leftLobe.setAttribute('cy', 274.125);
+      leftLobe.setAttribute('transform', 'rotate(20 179.474 274.125)');
+
+      rightLobe.setAttribute('cx', 821.475);
+      rightLobe.setAttribute('cy', 283.125);
+      rightLobe.setAttribute('transform', 'rotate(-20 821.475 283.125)');
+    }
+
+  }
+
+
+
+  bunny.addEventListener('click', () => {
+
+    leftLobe.getAttribute('cx') === '310' && rightLobe.getAttribute('cx') === '678' ? eyesClosed = true : eyesClosed = false
+
+    if (eyesClosed) {
+      animateLobes("open");
+    } else {
+      animateLobes("close");
+    }
+
+    setTimeout(() => {
+
+      if (eyesClosed) {
+        animateLobes("close");
+      } else {
+        animateLobes("open");
+      }
+    }, 2000);
+  });
+
+  const inputField = document.getElementById('loginInfo');
+  inputField.focus();
+  inputField.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const passwordField = document.querySelector('[name="password"]');
+      passwordField.focus();
+    }
+  });
+
+  function loadScript() {
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      const loginInfoField = document.getElementById('loginInfo');
+      const knowMoreField = document.getElementById("knowMore");
+      if (loginInfoField.value.includes('@')) {
+        loginInfoField.type = 'email';
+        loginInfoField.name = "username"
+        knowMoreField.value = "email";
+      } else {
+        loginInfoField.type = 'text';
+        loginInfoField.pattern = "[a-zA-Z0-9_]+";
+        loginInfoField.name = "username"
+        knowMoreField.value = "username";
+      }
+    });
+  }
+
+  const leftPupil = document.getElementById('leftPupil');
+  const rightPupil = document.getElementById('rightPupil');
+
+  const svg = document.querySelector('.bunny');
+  const viewBox = svg.viewBox.baseVal;
+  const viewBoxWidth = viewBox.width;
+  const viewBoxHeight = viewBox.height;
+
+  const leftEyeBounds = {
+    cx: 384.622,
+    cy: 459,
+    rx: 22,
+    ry: 25
+  };
+  const rightEyeBounds = {
+    cx: 598.622,
+    cy: 459,
+    rx: 22,
+    ry: 25
+  };
+
+  function movePupil(event, pupil, bounds) {
+    const svgRect = svg.getBoundingClientRect();
+    const mouseX = event.clientX - svgRect.left;
+    const mouseY = event.clientY - svgRect.top;
+
+
+    const scaledMouseX = (mouseX / svgRect.width) * viewBoxWidth;
+    const scaledMouseY = (mouseY / svgRect.height) * viewBoxHeight;
+
+    const angle = Math.atan2(scaledMouseY - bounds.cy, scaledMouseX - bounds.cx);
+
+    const newX = bounds.cx + Math.cos(angle) * bounds.rx;
+    const newY = bounds.cy + Math.sin(angle) * bounds.ry;
+
+    pupil.setAttribute('cx', newX);
+    pupil.setAttribute('cy', newY);
+  }
+
+  function onMouseMove(event) {
+    movePupil(event, leftPupil, leftEyeBounds);
+    movePupil(event, rightPupil, rightEyeBounds);
+  }
+
+  document.addEventListener('mousemove', onMouseMove);
+
+
+
+</script>
+
+<%- include('partials/footer') %>

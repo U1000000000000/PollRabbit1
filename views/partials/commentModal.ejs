@@ -1,0 +1,146 @@
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent dark overlay */
+  }
+
+  .modal-content {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Applies blur effect to modal */
+    position: relative;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+
+  /* Fixed close button in the top-right corner of the screen */
+  .close {
+    position: fixed; /* Now fixed to the screen, not inside modal */
+    top: 20px;  /* Positioned at the top of the screen */
+    right: 20px;  /* Positioned at the right edge of the screen */
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it's above the modal content */
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+  }
+
+  .add-a-comment {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+
+
+  .comment-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .comment-btn:hover {
+    background-color: darkorange;
+  }
+</style>
+
+<div id="commentModal" class="modal">
+  <div class="modal-content">
+    <!-- Close Button Outside Modal -->
+    <span class="close">&times;</span>
+
+    <h2 class="add-a-comment">Add a Comment</h2>
+
+    <!-- Form for commenting -->
+    <form id="commentForm" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+      <input type="hidden" name="pollId" id="modalPollId">
+      <input class="comment-input" type="text" name="comment" id="commentText" required>
+      <button class="comment-btn" type="submit">Comment</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("commentModal");
+  const closeModalButton = document.getElementsByClassName("close")[0];
+  const commentForm = document.getElementById("commentForm");
+  const commentText = document.getElementById("commentText");
+  const modalPollId = document.getElementById("modalPollId");
+
+  // Open the modal and set poll ID
+  function openModal(pollId) {
+    modalPollId.value = pollId;
+    modal.style.display = "block";
+  }
+
+  // Close the modal when clicking 'X'
+  closeModalButton.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Close the modal when clicking outside the modal
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Handle form submission
+  commentForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const pollId = modalPollId.value;
+    const comment = commentText.value.trim();  // Trim the input
+
+    if (!comment) {
+      alert("Comment cannot be empty!");  // Prevent empty comment
+      return;
+    }
+
+    fetch("/comment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ pollId, comment })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        modal.style.display = "none";
+        commentForm.reset();
+        showMessage("Comment added");
+      } else {
+        console.error("Error adding comment");
+      }
+    })
+    .catch(error => console.error("Error:", error));
+  });
+</script>

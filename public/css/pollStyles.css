@@ -1,0 +1,36 @@
+.comment-box{
+  margin:10.5%;
+  width: 100%;
+}
+
+.input-comment {
+  border-radius: 3px;
+  resize: none;
+  border: 1px solid orange;
+  height: 70px;
+  width: 75%;
+  margin-bottom: 7px;
+}
+
+.input-comment:focus {
+  border-color: orange;
+  outline: none;
+}
+
+.submit-button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: orange;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.commented-comments{
+  background-color: #FFF7ED;
+
+  width: 75%;
+  border-radius: 3px;
+}

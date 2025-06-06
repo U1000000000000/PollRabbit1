@@ -1,0 +1,143 @@
+.SVG {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+}
+
+.bunny-bubble {
+  position: absolute;
+  top: 20%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bunny {}
+
+#leftLobe, #rightLobe {
+  transition: cx 0.5s ease, cy 0.5s ease, transform 0.5s ease;
+}
+
+.speech-bubble {
+  position: relative;
+  top: 105px;
+  left: 190px;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#bubble-text {
+  transform: translateY(25px);
+  font-size: 50px;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#life {
+  height: 550px;
+  width: 550px;
+  transform: translateY(25px);
+}
+
+.notSVG {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  margin-top: 7%;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 5px;
+  background-color: orange;
+  border: none;
+}
+
+.or-text {
+  margin: 0 10px;
+  color: #888;/ font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.form-label {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.form-control {
+  width: 300px;
+  height: 40px;
+  margin: 0 0 25px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nextStep {
+  width: 300px;
+  height: 40px;
+  background-color: white;
+  border-color: orange;
+  color: orange;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextStep:hover {
+  background-color: orange;
+  color: white;
+}
