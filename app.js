@@ -138,11 +138,20 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+// app.get("/auth/google",
+//   passport.authenticate("google", {
+//     scope: ["profile"]
+//   })
+// );
+
 app.get("/auth/google",
-  passport.authenticate("google", {
-    scope: ["profile"]
-  })
+  (req, res, next) => {
+    console.log("Redirecting to Google with callback URL:", "https://pollrabbit.onrender.com/auth/google/game");
+    next();
+  },
+  passport.authenticate("google", { scope: ["profile"] })
 );
+
 
 app.get("/auth/google/game",
   passport.authenticate("google", {
