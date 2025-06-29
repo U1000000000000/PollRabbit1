@@ -21,96 +21,112 @@
     font-size: 16px;
     font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     margin-bottom: 30px;
-    padding-left: 10px; /* Add padding for left alignment */
+    padding-left: 10px;
   }
 
   .navigations {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns navigation items to the left */
+    align-items: flex-start;
     width: 100%;
     padding-top: 20px;
   }
 
+  .navigations a {
+    text-decoration: none;  /* Remove underline */
+    width: 100%;            /* Make clickable area fill container */
+    display: block;
+  }
+
   .navigates {
     display: flex;
-    align-items: center; /* Vertically aligns icons and text */
+    align-items: center;
     margin-bottom: 30px;
     margin-left: 2px;
-    padding-left: 10px; /* Add padding for left alignment */
+    padding-left: 10px;
   }
 
   .navigates svg {
-    margin-right: 10px; /* Adds space between the icon and text */
+    margin-right: 10px;
   }
 
   .navigates p {
     margin: 0;
     font-size: 16px;
-    color: #000; /* Matches text color */
+    color: #000;
     font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  .navigates:hover p {
+    color: #F96E2A; /* Optional: highlight on hover */
   }
 </style>
 
-
 <div class="side-panel">
-
   <div class="logo">
-    <h1 >PollRabbit</h1>
+    <h1>PollRabbit</h1>
   </div>
 
-
   <div class="navigations">
-    <div class="navigates">
-      <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" id="home" xmlns="http://www.w3.org/2000/svg" class="icon line">
-        <polyline id="primary" points="21 12 12 3 3 12" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5;"></polyline>
-        <path id="primary-2" data-name="primary" d="M19,10V20.3a.77.77,0,0,1-.83.7H14.3V14.1H9.7V21H5.83A.77.77,0,0,1,5,20.3V10" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5;"></path>
-      </svg>
-      <p>Home</p>
-    </div>
+    <a href="/">
+      <div class="navigates">
+        <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" id="home" xmlns="http://www.w3.org/2000/svg" class="icon line">
+          <polyline id="primary" points="21 12 12 3 3 12" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5;"></polyline>
+          <path id="primary-2" data-name="primary" d="M19,10V20.3a.77.77,0,0,1-.83.7H14.3V14.1H9.7V21H5.83A.77.77,0,0,1,5,20.3V10" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5;"></path>
+        </svg>
+        <p>Home</p>
+      </div>
+    </a>
 
+    <a href="/search">
+      <div class="navigates">
+        <svg fill="#000000" width="25px" height="25px" viewBox="-2.5 -2.5 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-search">
+          <path d='M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z' />
+        </svg>
+        <p>Search</p>
+      </div>
+    </a>
 
-    <div class="navigates">
+    <a href="<%=cUser ? cUser.username : 'login'%>">
+      <div class="navigates">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p>Profile</p>
+      </div>
+    </a>
 
-      <svg fill="#000000" width="25px" height="25px" viewBox="-2.5 -2.5 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-search">
-        <path d='M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z' />
-      </svg>
-      <p>Search</p>
-    </div>
+    <a href="/submit">
+      <div class="navigates">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2h4zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
+          </g>
+        </svg>
+        <p>Create</p>
+      </div>
+    </a>
 
-    <div class="navigates">
-      <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <p>Profile</p>
-    </div>
+    <a href="/saved">
+      <div class="navigates">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M6 6C6 4.89543 6.89543 4 8 4H16C17.1046 4 18 4.89543 18 6V18.7268C18 19.5969 16.9657 20.0519 16.3243 19.4639L12 15.5L7.67573 19.4639C7.03432 20.0519 6 19.5969 6 18.7268V6Z" stroke="#000000"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p>Saves</p>
+      </div>
+    </a>
 
-    <div class="navigates">
-      <svg width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <g>
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2h4zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
-        </g>
-      </svg>
-      <p>Create</p>
-    </div>
-
-    <div class="navigates">
-      <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 6C6 4.89543 6.89543 4 8 4H16C17.1046 4 18 4.89543 18 6V18.7268C18 19.5969 16.9657 20.0519 16.3243 19.4639L12 15.5L7.67573 19.4639C7.03432 20.0519 6 19.5969 6 18.7268V6Z" stroke="#000000"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <p>Saves</p>
-    </div>
-
-    <div class="navigates">
-      <svg width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 12-4-4m4 4-4 4m4-4H9m5 9a9 9 0 1 1 0-18" />
-      </svg>
-      <p>Logout</p>
-    </div>
-
+    <a href="/logout">
+      <div class="navigates">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 12-4-4m4 4-4 4m4-4H9m5 9a9 9 0 1 1 0-18" />
+        </svg>
+        <p>Logout</p>
+      </div>
+    </a>
   </div>
 </div>
