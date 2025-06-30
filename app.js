@@ -144,14 +144,6 @@ app.get("/auth/google",
   })
 );
 
-// app.get("/auth/google",
-//   (req, res, next) => {
-//     console.log("Redirecting to Google with callback URL:", "https://pollrabbit.onrender.com/auth/google/game");
-//     next();
-//   },
-//   passport.authenticate("google", { scope: ["profile"] })
-// );
-
 
 app.get("/auth/google/game",
   passport.authenticate("google", {
@@ -182,7 +174,9 @@ app.get("/logout", function(req, res) {
 
 app.get("/submit", function(req, res) {
   if (req.isAuthenticated()) {
-    res.render("submit");
+    res.render("submit", {
+      cUser: req.user
+    })
   } else {
     res.redirect("/login");
   }
